@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hack_talk/core/theming/app_colors.dart';
-import 'package:hack_talk/core/widgets/text_widgets.dart';
+import 'package:hack_talk/core/utils/app_colors.dart';
+import 'package:hack_talk/core/widgets/text_widget.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget(

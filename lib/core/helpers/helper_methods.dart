@@ -1,142 +1,54 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
-import 'package:hack_talk/core/theming/app_colors.dart';
-import 'package:hack_talk/core/theming/assets.dart';
-import 'package:hack_talk/core/theming/text_style.dart';
-
-class HelperMethods {
-  HelperMethods._();
-  static void showCustomSnackBarSuccess(BuildContext context, String title) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          title,
-          textAlign: TextAlign.left,
-          style: TextStyles.cairo16BoldWhite,
-        ),
-        backgroundColor: AppColors.mainColor,
-        duration: const Duration(seconds: 3),
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-        elevation: 4,
-      ),
-    );
-  }
-
-  static void showCustomSnackBarError(BuildContext context, String title) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          title,
-          textAlign: TextAlign.left,
-          style: TextStyles.cairo16BoldWhite,
-        ),
-        backgroundColor: AppColors.tFFErrorColor,
-        duration: const Duration(seconds: 3),
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-        elevation: 4,
-      ),
-    );
-  }
-
-  static Future<Widget?> showLoadingAlertDialog(context) {
-    return showDialog(
-      barrierDismissible: false,
-      context: context,
-      builder: (context) => PopScope(
-        canPop: false,
-        child: AbsorbPointer(
-          absorbing: true,
-          child: AlertDialog.adaptive(
-            contentPadding: EdgeInsets.zero,
-            backgroundColor: AppColors.mainColor,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            content: SizedBox(
-              height: 200.h,
-              width: 100.w,
-              child: const Center(
-                child: CircularProgressIndicator(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  // static void afterLogin(
-  //   BuildContext context,
-  //   AuthCubit authCubit,
-  //   LoginModel value,
-  // ) {
-  //   CacheHelper cacheHelper = CacheHelper();
-  //   Navigator.pop(context);
-  //   cacheHelper.saveData(key: 'email', value: value.data!['user']['email']);
-  //   Navigator.pop(context);
-  //   cacheHelper.saveData(key: 'name', value: value.data!['user']['name']);
-  //   authCubit.rememberMe
-  //       ? cacheHelper.saveData(key: AppConstants.rememberMeToken, value: true)
-  //       : cacheHelper.removeData(key: AppConstants.rememberMeToken);
-  //   authCubit.rememberMe
-  //       ? Navigator.pushNamedAndRemoveUntil(
-  //           context,
-  //           Routes.home,
-  //           (route) => false,
-  //         )
-  //       : null;
-  // }
-
-  void svgPrecacheImage() {
+class HelperMethods{
+  static void svgPrecacheImage() {
     const cacheSvgImages = [
-      Assets.alert,
-      Assets.arcticonsNcPasswords,
-      Assets.audio,
-      Assets.audioGallery,
-      Assets.congratulation,
-      Assets.contactUs,
-      Assets.downImage,
-      Assets.download,
-      Assets.ellipse,
-      Assets.feature1,
-      Assets.feature2,
-      Assets.feature3,
-      Assets.feature4,
-      Assets.fluentPerson24Regular,
-      Assets.hacktalk,
-      Assets.home,
-      Assets.iconamoonArrowRight2Bold,
-      Assets.login,
-      Assets.logoSvg,
-      Assets.mdiAboutCircleOutline,
-      Assets.onBoarding1,
-      Assets.onBoarding2,
-      Assets.onBoarding3,
-      Assets.onBoarding4,
-      Assets.profile,
-      Assets.question,
-      Assets.record,
-      Assets.recordPause,
-      Assets.recordVideo,
-      Assets.reset,
-      Assets.signUp,
-      Assets.solarStarFallBroken,
-      Assets.startAudioRecord,
-      Assets.startDownloadImageAudio,
-      Assets.startRecording,
-      Assets.startRecordingImageAudio,
-      Assets.stopIconAudioRecord,
-      Assets.text2Logo,
-      Assets.textLogo,
-      Assets.upImage,
-      Assets.uploadVideo,
-      Assets.uploadVideoImage,
-      Assets.verification,
-      Assets.video,
-      Assets.videoGallery,
+      'assets/svgs/congratulation.svg',
+      'assets/svgs/audio_gallery.svg',
+      'assets/svgs/audio.svg',
+      'assets/svgs/arcticons_nc-passwords.svg',
+      'assets/svgs/alert.svg',
+      'assets/svgs/contact_us.svg',
+      'assets/svgs/forget.svg',
+      'assets/svgs/down_image.svg',
+      'assets/svgs/download.svg',
+      'assets/svgs/ellipse.svg',
+      'assets/svgs/feature1.svg',
+      'assets/svgs/feature2.svg',
+      'assets/svgs/feature3.svg',
+      'assets/svgs/feature4.svg',
+      'assets/svgs/fluent_person-24-regular.svg',
+      'assets/svgs/hacktalk.svg',
+      'assets/svgs/home.svg',
+      'assets/svgs/iconamoon_arrow-right-2-bold.svg',
+      'assets/svgs/login.svg',
+      'assets/svgs/logo_svg.svg',
+      'assets/svgs/mdi_about-circle-outline.svg',
+      'assets/svgs/onBoarding1.svg',
+      'assets/svgs/onBoarding2.svg',
+      'assets/svgs/onBoarding3.svg',
+      'assets/svgs/onBoarding4.svg',
+      'assets/svgs/profile.svg',
+      'assets/svgs/question.svg',
+      'assets/svgs/record.svg',
+      'assets/svgs/record video.svg',
+      'assets/svgs/record_pause.svg',
+      'assets/svgs/reset.svg',
+      'assets/svgs/signUp.svg',
+      'assets/svgs/solar_star-fall-broken.svg',
+      'assets/svgs/start audio record.svg',
+      'assets/svgs/start download image audio.svg',
+      'assets/svgs/Start recording.svg',
+      'assets/svgs/start recording image audio.svg',
+      'assets/svgs/stop icon audio record.svg',
+      'assets/svgs/text2_logo.svg',
+      'assets/svgs/text_logo.svg',
+      'assets/svgs/up_image.svg',
+      'assets/svgs/Upload video.svg',
+      'assets/svgs/upload video image.svg',
+      'assets/svgs/verification.svg',
+      'assets/svgs/video.svg',
+      'assets/svgs/video_gallery.svg',
     ];
 
     for (String element in cacheSvgImages) {

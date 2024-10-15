@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hack_talk/core/helpers/extension.dart';
-import 'package:hack_talk/core/theming/app_colors.dart';
-import 'package:hack_talk/core/widgets/text_widgets.dart';
-
+import 'package:hack_talk/core/utils/app_assets.dart';
+import 'package:hack_talk/core/utils/app_colors.dart';
+import 'package:hack_talk/core/widgets/text_widget.dart';
 
 class HomeContainerWidget extends StatelessWidget {
   const HomeContainerWidget(
